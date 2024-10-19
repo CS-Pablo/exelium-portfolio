@@ -406,3 +406,49 @@ footer {
   body > header:nth-child(1) > div:nth-child(1) > nav:nth-child(2) > ul:nth-child(1) > li:nth-child(4) {
     padding-right: 0;
   }
+
+  /* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Appliquer les animations */
+#showcase h1 { animation: fadeIn 1s ease-out; }
+#showcase p { animation: slideInFromLeft 1s ease-out 0.5s both; }
+#showcase .btn { animation: slideInFromRight 1s ease-out 1s both; }
+.service-box { animation: fadeIn 0.8s ease-out; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container { width: 90%; }
+    
+    header .logo, header nav {
+        float: none;
+        text-align: center;
+    }
+    
+    header nav { margin-top: 1rem; }
+    
+    .services-grid { grid-template-columns: 1fr; }
+    
+    .about-content, .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    .team-image, .contact-form, .contact-info {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}

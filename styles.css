@@ -1,0 +1,127 @@
+:root {
+    --primary-color: #0099FF;
+    --secondary-color: #C0C0C0;
+    --accent-color: #006699;
+    --text-color: #333333;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: var(--text-color);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .logo {
+    float: left;
+    width: 150px;
+}
+
+header nav {
+    float: right;
+    margin-top: 1rem;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 20px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#showcase {
+    background: url('img/showcase-bg.jpg') no-repeat center center/cover;
+    min-height: 400px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+#showcase::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 153, 255, 0.7);
+    z-index: 1;
+}
+
+#showcase .container {
+    position: relative;
+    z-index: 2;
+}
+
+#showcase h1 {
+    font-size: 3rem;
+    margin-top: 100px;
+}
+
+#showcase p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--primary-color);
+}
+
+#services {
+    padding: 2rem 0;
+    background: #ffffff;
+}
+
+.service-box {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-box img {
+    width: 80px;
+    margin-bottom: 1rem;
+}

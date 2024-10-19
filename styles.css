@@ -24,18 +24,21 @@ body {
 header {
     background: linear-gradient(to right, var(--primary-color), var(--accent-color));
     color: #ffffff;
-    padding: 0,2rem 0;
+    padding: 0,1rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 header .logo {
     float: left;
-    width: 150px;
+    width: 70px;
+    margin-top: 1rem;
+    
 }
 
 header nav {
     float: right;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 header nav ul {
@@ -288,3 +291,118 @@ footer {
         margin-bottom: 2rem;
     }
 }
+
+/* styles.css | https://exe-porfolio.netlify.app/styles.css */
+
+.service-box:hover {
+    /* transform: translateY(-5px); */
+    transform: translateY(-1px);
+  }
+  
+  #showcase h1 {
+    /* margin-top: 100px; */
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+  
+  #showcase p {
+    /* margin-bottom: 20px; */
+    margin-bottom: 50px;
+    margin-top: 0;
+  }
+  
+  #showcase {
+    /* min-height: 400px; */
+    padding-block: 1px;
+  }
+  
+  #about, #about-preview {
+    /* padding: 3rem 0; */
+    padding: 4rem 0;
+  }
+  
+  header nav {
+    /* margin-top: 3rem; */
+    margin-top: 1rem;
+  }
+  
+  #services-preview, #services-detail {
+    /* padding: 3rem 0; */
+    padding: 4rem 0;
+  }
+  
+  .btn {
+    font-weight: 600;
+  }
+  
+  .btn-secondary {
+    font-weight: 600;
+  }
+  
+  /* Element | https://exe-porfolio.netlify.app/ */
+  
+  div.service-box > h3:nth-child(2) {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Element | https://exe-porfolio.netlify.app/ */
+  
+  div.service-box > p:nth-child(3) {
+    margin-top: 0.5em;
+  }
+  
+  /* Element | https://exe-porfolio.netlify.app/ */
+  
+  div.service-box > img:nth-child(1) {
+    margin-bottom: 0;
+  }
+  
+  /* Element | https://exe-porfolio.netlify.app/ */
+  
+  #about-preview > div:nth-child(1) > h2:nth-child(1) {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  
+  /* Element | https://exe-porfolio.netlify.app/ */
+  
+  #about-preview > div:nth-child(1) > p:nth-child(2) {
+    margin-top: 5px;
+  }
+  
+  /* Element | https://exe-porfolio.netlify.app/ */
+  
+  #about-preview > div:nth-child(1) > a:nth-child(3) {
+    margin-top: 20px;
+  }
+  
+  /* Element | https://exe-porfolio.netlify.app/ */
+  
+  #contact-preview > div:nth-child(1) > h2:nth-child(1) {
+    margin-block: 0;
+  }
+  
+  /* Element | https://exe-porfolio.netlify.app/ */
+  
+  #contact-preview > div:nth-child(1) > a:nth-child(3) {
+    margin-top: 20px;
+  }
+  
+  /* Element | https://exe-porfolio.netlify.app/ */
+  
+  #contact-preview > div:nth-child(1) > p:nth-child(2) {
+    margin-top: 5px;
+  }
+  
+  /* Element | https://exe-porfolio.netlify.app/ */
+  
+ /* .logo {
+    margin-block: -20px;
+    margin-left: -37px;
+  }
+  
+   Element | https://exe-porfolio.netlify.app/ */
+  
+  body > header:nth-child(1) > div:nth-child(1) > nav:nth-child(2) > ul:nth-child(1) > li:nth-child(4) {
+    padding-right: 0;
+  }

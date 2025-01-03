@@ -310,3 +310,152 @@ footer {
         margin-bottom: 1rem;
     }
 }
+
+/* Media Queries améliorées */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    #showcase h1 {
+        font-size: 3rem;
+    }
+
+    #showcase p {
+        font-size: 1.25rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header et Navigation */
+    .nav-container {
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+
+    header .logo {
+        width: 60px;
+        margin: 0.5rem 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.8rem;
+    }
+
+    /* Showcase */
+    #showcase {
+        min-height: auto;
+        padding: 6rem 0 3rem;
+    }
+
+    #showcase h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #showcase p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-box {
+        padding: 1.5rem;
+    }
+
+    /* About */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .team-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Contact */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustements pour très petits écrans */
+    #showcase h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .service-box img {
+        width: 60px;
+    }
+
+    /* Formulaire */
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem;
+    }
+
+    /* Espacement général */
+    #services-preview,
+    #services-detail,
+    #about,
+    #about-preview,
+    #contact {
+        padding: 3rem 0;
+    }
+}
+
+/* Fix pour les images responsives */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix pour le header fixe sur mobile */
+body {
+    padding-top: 60px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
+}

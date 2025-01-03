@@ -566,3 +566,9 @@ body {
         font-size: 1.25rem;
     }
 }
+@media (max-width: 768px) {
+    .service-item-image {
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -3,72 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exe-lium Corp - Solutions Logicielles Innovantes</title>
+    <title>Exe-lium Corp - Nos Services</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="home.html"><img  src="img/logo.png" alt="Exe-lium Corp Logo" class="logo" ></a>
-            <nav>
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="home.html" class="logo-link">
+                <img src="img/logo.png" alt="Exe-lium Corp Logo" class="logo">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="home.html" class="current">Accueil</a></li>
+                    <li><a href="home.html">Accueil</a></li>
                     <li><a href="about.html">À propos</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="services.html" class="current">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="showcase">
+    <section id="services-detail">
         <div class="container">
-            <h1>Solutions Logicielles Innovantes</h1>
-            <p>Nous créons des solutions sur mesure pour répondre à vos besoins spécifiques</p>
-            <a href="contact.html" class="btn">Contactez-nous</a>
-        </div>
-    </section>
-
-    <section id="services-preview">
-        <div class="container">
-
-            <div class="services-grid">
-                <div class="service-box">
-                    <img src="img/web-icon.png" alt="Création de site">
-                    <h3>Création de Site</h3>
-                    <p>Des sites web modernes et réactifs pour votre entreprise</p>
-                    <a href="services.html#web" class="btn-secondary">En savoir plus</a>
-                </div>
-                <div class="service-box">
-                    <img src="img/security-icon.png" alt="Cybersécurité">
-                    <h3>Cybersécurité</h3>
-                    <p>Protégez vos données avec nos solutions de sécurité avancées</p>
-                    <a href="services.html#security" class="btn-secondary">En savoir plus</a>
-                </div>
-                <div class="service-box">
-                    <img src="img/dev-icon.png" alt="Développement Logiciel">
-                    <h3>Développement Logiciel</h3>
-                    <p>Des applications sur mesure pour optimiser votre activité</p>
-                    <a href="services.html#development" class="btn-secondary">En savoir plus</a>
-                </div>
+            <div class="section-header">
+                <h1>Nos Services</h1>
+                <p>Des solutions adaptées à vos besoins</p>
             </div>
-        </div>
-    </section>
+            
+            <div class="services-list">
+                <!-- Service: Création de site web -->
+                <a href="web.html" class="service-link">
+                    <article class="service-item" id="web">
+                        <div class="service-item-image">
+                            <img src="img/web-icon.png" alt="Création de site">
+                        </div>
+                        <div class="service-description">
+                            <h2>Création de Site Web</h2>
+                            <p>Nous concevons et développons des sites web modernes, réactifs et optimisés pour tous les appareils. Que vous ayez besoin d'un site vitrine élégant ou d'une plateforme e-commerce complexe, notre équipe d'experts est là pour vous.</p>
+                        </div>
+                    </article>
+                </a>
 
-    <section id="about-preview">
-        <div class="container">
-            <h2>À propos d'Exe-lium Corp</h2>
-            <p>Découvrez notre histoire, notre mission et nos valeurs qui font d'Exe-lium Corp un leader dans le domaine des services logiciels.</p>
-            <a href="about.html" class="btn">En savoir plus sur nous</a>
-        </div>
-    </section>
+                <!-- Service: Cybersécurité -->
+                <a href="security.html" class="service-link">
+                    <article class="service-item" id="security">
+                        <div class="service-item-image">
+                            <img src="img/security-icon.png" alt="Cybersécurité">
+                        </div>
+                        <div class="service-description">
+                            <h2>Cybersécurité</h2>
+                            <p>Protégez vos données et votre infrastructure avec nos solutions de sécurité avancées. Nous proposons des services de test de pénétration, d'audit de sécurité et de mise en place de systèmes de protection robustes.</p>
+                        </div>
+                    </article>
+                </a>
 
-    <section id="contact-preview">
-        <div class="container">
-            <h2>Prêt à démarrer votre projet ?</h2>
-            <p>Contactez-nous dès aujourd'hui pour discuter de vos besoins en matière de solutions logicielles.</p>
-            <a href="contact.html" class="btn">Contactez-nous</a>
+                <!-- Service: Développement Logiciel -->
+                <a href="development.html" class="service-link">
+                    <article class="service-item" id="development">
+                        <div class="service-item-image">
+                            <img src="img/dev-icon.png" alt="Développement Logiciel">
+                        </div>
+                        <div class="service-description">
+                            <h2>Développement Logiciel</h2>
+                            <p>De la conception à la mise en production, nous développons des applications sur mesure pour répondre à vos besoins spécifiques. Notre expertise couvre une large gamme de technologies et de plateformes.</p>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Nouveau Service: Conseil et Formation -->
+                <a href="consulting.html" class="service-link">
+                    <article class="service-item" id="consulting">
+                        <div class="service-item-image">
+                            <img src="img/consulting-icon.png" alt="Conseil et Formation">
+                        </div>
+                        <div class="service-description">
+                            <h2>Conseil et Formation</h2>
+                            <p>Bénéficiez de notre expertise pour accompagner vos équipes et optimiser vos processus technologiques. Nous proposons également des formations sur mesure pour développer les compétences de vos collaborateurs.</p>
+                        </div>
+                    </article>
+                </a>
+            </div>
         </div>
     </section>
 

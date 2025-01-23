@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Création de Site Web | Exe-lium Corp</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Création de Site Web | Exe-lium Corp</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            main {
+                padding-top: 180px; 
+            }
+        </style>
+    </head>
 <body>
     <header>
-        <a href="services.html">Retour aux services</a>
+        <div class="container">
+            <a href="home.html"><img src="img/logo.png" alt="Exe-lium Corp Logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="services.html" class="current">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
         <h1>Création de Site Web</h1>
         <p>Nous concevons des sites web modernes, optimisés pour tous les appareils.</p>
@@ -18,8 +34,11 @@
             <li>E-commerce</li>
         </ul>
     </main>
+
     <footer>
-        Contactez-nous !
+        <div class="container">
+            <p>&copy; 2025 Exe-lium Corp. Tous droits réservés.</p>
+        </div>
     </footer>
 </body>
 </html>

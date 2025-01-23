@@ -633,12 +633,12 @@ body {
 /* Bouton retour */
 #consulting-page a {
     display: inline-block;
-    margin: 2rem auto;
+    margin: 20rem auto;
     color: var(--accent-secondary);
     font-weight: 500;
     text-decoration: none;
     padding: 0.8rem 1.5rem;
-    border: 10px solid var(--accent-secondary);
+    border: 2px solid var(--accent-secondary);
     border-radius: 6px;
     transition: all 0.3s ease;
 }

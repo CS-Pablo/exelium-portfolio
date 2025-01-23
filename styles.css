@@ -572,3 +572,85 @@ body {
         height: 100px;
     }
 }
+/* Styles spécifiques pour la page Consulting */
+#consulting-page {
+    padding: 6rem 0;
+    background-color: var(--bg-secondary);
+}
+
+#consulting-page h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#consulting-page p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+#consulting-page ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#consulting-page ul li {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+#consulting-page ul li:hover {
+    transform: translateY(-4px);
+    background: var(--accent-secondary);
+    color: var(--text-primary);
+}
+
+/* Bouton retour */
+#consulting-page a {
+    display: inline-block;
+    margin: 2rem auto;
+    color: var(--accent-secondary);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--accent-secondary);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#consulting-page a:hover {
+    background: var(--accent-secondary);
+    color: var(--text-primary);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #consulting-page ul li {
+        width: 100%;
+    }
+
+    #consulting-page h1 {
+        font-size: 2rem;
+    }
+
+    #consulting-page p {
+        font-size: 1rem;
+    }
+}

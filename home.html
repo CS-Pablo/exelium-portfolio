@@ -1,81 +1,332 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exe-lium Corp - Solutions Logicielles Innovantes</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exe-lium Corp — Solutions logicielles innovantes</title>
+  <meta name="description" content="Exe-lium Corp crée des solutions logicielles sur mesure : web, cybersécurité, développement applicatif. Contactez-nous pour démarrer votre projet." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%2300e6a7'/%3E%3Cpath d='M18 34l8 8 20-20' stroke='%23001b1f' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #0b0f13;
+      --panel: #11161c;
+      --text: #e7f0f3;
+      --muted: #9fb2bb;
+      --brand: #00e6a7;
+      --brand-2: #4ac6ff;
+      --ring: 0 0 0 3px rgba(0,230,167,.25);
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+      --grid-gap: clamp(16px, 2vw, 28px);
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f7fafb; --panel:#ffffff; --text:#0b1215; --muted:#4b5b63; --shadow: 0 10px 30px rgba(0,0,0,.08), inset 0 1px 0 rgba(0,0,0,.03); }
+      body.light { --bg:#f7fafb; --panel:#ffffff; --text:#0b1215; --muted:#4b5b63; }
+    }
+    * { box-sizing: border-box }
+    html, body { height: 100% }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(74,198,255,.12), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(0,230,167,.12), transparent 60%), var(--bg);
+      color: var(--text);
+      line-height: 1.6; letter-spacing: .2px;
+    }
+    a { color: inherit; text-decoration: none }
+    .container { width: min(1120px, 92%); margin-inline: auto }
+    header {
+      position: sticky; top: 0; z-index: 40; backdrop-filter: saturate(160%) blur(10px);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+    }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0 }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700 }
+    .brand svg { width:32px; height:32px }
+    .nav ul { list-style:none; display:flex; gap:18px; padding:0; margin:0; align-items:center }
+    .nav a { padding:8px 12px; border-radius: 10px; color: var(--muted); font-weight:600 }
+    .nav a[aria-current="page"], .nav a:hover { color: var(--text); background: color-mix(in srgb, var(--panel) 60%, transparent) }
+    .cta { padding:10px 14px; border-radius: 999px; background: linear-gradient(90deg, var(--brand), var(--brand-2)); color:#001b1f; font-weight:800; box-shadow: var(--shadow); }
+
+    /* Hero */
+    .hero { display:grid; grid-template-columns: 1.2fr .8fr; gap: var(--grid-gap); padding: clamp(48px, 7vw, 88px) 0 }
+    .hero h1 { font-size: clamp(32px, 4.5vw, 62px); line-height: 1.05; margin: 0 0 12px; letter-spacing:.2px }
+    .subtitle { color: var(--muted); font-size: clamp(16px, 1.3vw, 18px) }
+    .hero .actions { display:flex; gap:12px; margin-top: 22px; flex-wrap: wrap }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; background: var(--panel); border:1px solid color-mix(in srgb, var(--text) 12%, transparent); color:var(--text); border-radius: 12px; box-shadow: var(--shadow); font-weight:700 }
+    .btn:hover { outline: var(--ring) }
+    .btn.secondary { background: transparent }
+
+    .card { background: var(--panel); border:1px solid color-mix(in srgb, var(--text) 12%, transparent); border-radius: var(--radius); box-shadow: var(--shadow) }
+    .metrics { display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-top:18px }
+    .metric { padding:16px; text-align:center }
+    .metric .num { font-size: clamp(20px, 2.2vw, 28px); font-weight: 800 }
+    .metric .lab { color: var(--muted); font-size: 14px }
+
+    /* Services */
+    section { padding: clamp(44px, 6vw, 84px) 0 }
+    h2 { font-size: clamp(26px, 3.2vw, 40px); margin: 0 0 6px }
+    .lead { color: var(--muted); margin: 0 0 24px }
+    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap) }
+    .service { padding:22px }
+    .service h3 { margin:10px 0 6px }
+    .service p { color: var(--muted); margin:0 0 12px }
+    .service .more { font-weight:700; color: var(--brand) }
+
+    /* About */
+    .about { display:grid; grid-template-columns: 1fr 1fr; gap: var(--grid-gap) }
+    .stack { display:grid; gap:12px }
+    .stack .row { display:flex; gap:12px }
+    .chip { padding:10px 12px; background: color-mix(in srgb, var(--panel) 60%, transparent); border:1px solid color-mix(in srgb, var(--text) 10%, transparent); border-radius: 999px; font-weight:700 }
+
+    /* Contact */
+    form { display:grid; gap:12px }
+    label { font-weight:600 }
+    input, textarea, select { width:100%; padding:12px 14px; border-radius: 12px; border:1px solid color-mix(in srgb, var(--text) 14%, transparent); background: var(--panel); color:var(--text) }
+    input:focus, textarea:focus, select:focus { outline: var(--ring) }
+    .row-2 { display:grid; grid-template-columns: 1fr 1fr; gap:12px }
+
+    /* Footer */
+    footer { border-top:1px solid color-mix(in srgb, var(--text) 10%, transparent); padding: 28px 0; color: var(--muted) }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr 1fr }
+      .about { grid-template-columns: 1fr }
+      .row-2 { grid-template-columns: 1fr }
+    }
+    @media (max-width: 640px) {
+      .nav ul { display:none }
+      .grid { grid-template-columns: 1fr }
+    }
+
+    /* Micro-interactions */
+    .fade-in { opacity: 0; transform: translateY(6px); animation: fade .8s ease forwards }
+    .fade-in.del-1 { animation-delay: .1s } .fade-in.del-2{ animation-delay: .2s } .fade-in.del-3{ animation-delay: .3s }
+    @keyframes fade { to { opacity: 1; transform: none } }
+  </style>
+  <script>
+    document.documentElement.classList.remove('no-js');
+  </script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="home.html"><img  src="img/logo.png" alt="Exe-lium Corp Logo" class="logo" ></a>
-            <nav>
-                <ul>
-                    <li><a href="home.html" class="current">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- Header -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Navigation principale">
+      <a class="brand" href="#top" aria-label="Exe-lium Accueil">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="28" fill="url(#g)"/><path d="M18 34l8 8 20-20" stroke="#001b1f" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00e6a7"/><stop offset="100%" stop-color="#4ac6ff"/></linearGradient></defs>
+        </svg>
+        <span>Exe‑lium</span>
+      </a>
+      <ul>
+        <li><a href="#services" aria-current="page">Services</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="cta" href="#contact">Démarrer un projet</a>
+    </div>
+  </header>
 
-    <section id="showcase">
-        <div class="container">
-            <h1>Solutions Logicielles Innovantes</h1>
-            <p>Nous créons des solutions sur mesure pour répondre à vos besoins spécifiques</p>
-            <a href="contact.html" class="btn">Contactez-nous</a>
+  <!-- Hero -->
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <h1 class="fade-in">Solutions logicielles innovantes, prêtes pour la production</h1>
+        <p class="subtitle fade-in del-1">Nous concevons des applications sur mesure (web, mobile, cybersécurité) qui accélèrent vos opérations et créent un avantage concurrentiel.</p>
+        <div class="actions fade-in del-2">
+          <a class="btn" href="#contact">Parler à un expert</a>
+          <a class="btn secondary" href="#services">Voir nos services</a>
         </div>
+        <div class="metrics">
+          <div class="card metric"><div class="num">99,9%</div><div class="lab">disponibilité</div></div>
+          <div class="card metric"><div class="num">+120</div><div class="lab">projets livrés</div></div>
+          <div class="card metric"><div class="num"><span aria-hidden="true">⚡</span> CI/CD</div><div class="lab">déploiements continus</div></div>
+        </div>
+      </div>
+      <aside class="card" aria-label="Démonstration">
+        <div style="padding:18px 18px 0; border-bottom:1px solid color-mix(in srgb, var(--text) 10%, transparent);">
+          <div style="display:flex; gap:6px">
+            <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:10px;height:10px;border-radius:50%;background:#febc2e"></span>
+            <span style="width:10px;height:10px;border-radius:50%;background:#28c840"></span>
+          </div>
+        </div>
+        <div style="padding:18px">
+          <pre style="margin:0; overflow:auto"><code>// Exemple d'API sécurisée
+POST /api/v1/leads
+{
+  "company": "Acme",
+  "need": "Migration cloud",
+  "contact": "julie@acme.com"
+}
+→ 201 Created · SLA 30ms
+</code></pre>
+        </div>
+      </aside>
     </section>
 
-    <section id="services-preview">
-        <div class="container">
+    <!-- Services -->
+    <section id="services">
+      <h2>Nos services</h2>
+      <p class="lead">Des blocs solides, combinables, et livrables rapidement.</p>
+      <div class="grid">
+        <article class="card service">
+          <div class="icon" aria-hidden="true">💻</div>
+          <h3>Création de sites & apps web</h3>
+          <p>Sites vitrines, dashboards, API REST/GraphQL. Performance, accessibilité et SEO intégrés.</p>
+          <a class="more" href="#contact">Discuter de votre projet web →</a>
+        </article>
+        <article class="card service">
+          <div class="icon" aria-hidden="true">🛡️</div>
+          <h3>Cybersécurité pragmatique</h3>
+          <p>Audit, durcissement, SSO, chiffrement, tests d’intrusion et gestion des secrets.</p>
+          <a class="more" href="#contact">Renforcer votre sécurité →</a>
+        </article>
+        <article class="card service">
+          <div class="icon" aria-hidden="true">⚙️</div>
+          <h3>Développement logiciel sur mesure</h3>
+          <p>Backends scalables, microservices, intégrations ERP/CRM, automatisations n8n.</p>
+          <a class="more" href="#contact">Construire un outil métier →</a>
+        </article>
+      </div>
+    </section>
 
-            <div class="services-grid">
-                <div class="service-box">
-                    <img src="img/web-icon.png" alt="Création de site">
-                    <h3>Création de Site</h3>
-                    <p>Des sites web modernes et réactifs pour votre entreprise</p>
-                    <a href="services.html#web" class="btn-secondary">En savoir plus</a>
-                </div>
-                <div class="service-box">
-                    <img src="img/security-icon.png" alt="Cybersécurité">
-                    <h3>Cybersécurité</h3>
-                    <p>Protégez vos données avec nos solutions de sécurité avancées</p>
-                    <a href="services.html#security" class="btn-secondary">En savoir plus</a>
-                </div>
-                <div class="service-box">
-                    <img src="img/dev-icon.png" alt="Développement Logiciel">
-                    <h3>Développement Logiciel</h3>
-                    <p>Des applications sur mesure pour optimiser votre activité</p>
-                    <a href="services.html#development" class="btn-secondary">En savoir plus</a>
-                </div>
+    <!-- About -->
+    <section id="about">
+      <h2>À propos d’Exe‑lium</h2>
+      <p class="lead">Une équipe senior orientée impact, avec une culture qualité et livraison.</p>
+      <div class="about">
+        <div class="card" style="padding:22px">
+          <h3>Notre approche</h3>
+          <ul>
+            <li>Découverte rapide et chiffrage transparent.</li>
+            <li>Itérations courtes avec démonstrations hebdomadaires.</li>
+            <li>Observabilité par défaut (logs, traces, métriques).</li>
+            <li>Sécurité intégrée au cycle de dev (DevSecOps).</li>
+          </ul>
+        </div>
+        <div>
+          <div class="stack">
+            <div class="row">
+              <span class="chip">TypeScript</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">React</span>
+              <span class="chip">Next.js</span>
             </div>
+            <div class="row">
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Docker</span>
+              <span class="chip">Kubernetes</span>
+              <span class="chip">n8n</span>
+            </div>
+            <div class="row">
+              <span class="chip">Auth/SSO</span>
+              <span class="chip">OpenAPI</span>
+              <span class="chip">Terraform</span>
+              <span class="chip">CI/CD</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="about-preview">
-        <div class="container">
-            <h2>À propos d'Exe-lium Corp</h2>
-            <p>Découvrez notre histoire, notre mission et nos valeurs qui font d'Exe-lium Corp un leader dans le domaine des services logiciels.</p>
-            <a href="about.html" class="btn">En savoir plus sur nous</a>
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Prêt à démarrer votre projet ?</h2>
+      <p class="lead">Envoyez-nous quelques détails. Réponse sous 24h ouvrées.</p>
+      <div class="grid">
+        <form class="card" id="lead-form" style="padding:22px" onsubmit="return submitLead(event)">
+          <div class="row-2">
+            <div>
+              <label for="name">Nom</label>
+              <input id="name" name="name" required placeholder="Votre nom" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="vous@entreprise.com" />
+            </div>
+          </div>
+          <div class="row-2">
+            <div>
+              <label for="company">Entreprise</label>
+              <input id="company" name="company" placeholder="Acme SA" />
+            </div>
+            <div>
+              <label for="service">Service</label>
+              <select id="service" name="service">
+                <option>Création de site / app web</option>
+                <option>Cybersécurité</option>
+                <option>Développement logiciel</option>
+                <option>Autre</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="message">Votre besoin</label>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet…"></textarea>
+          </div>
+          <div>
+            <button class="btn" type="submit">Envoyer la demande</button>
+          </div>
+          <p id="form-status" class="subtitle" role="status" aria-live="polite" style="margin:0"></p>
+        </form>
+        <div class="card" style="padding:22px">
+          <h3>Coordonnées</h3>
+          <p>Email : <a href="mailto:contact@exe-lium.com">contact@exe-lium.com</a><br />Tél. : <a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+          <h3>Mentions rapides</h3>
+          <ul>
+            <li>Contrats au forfait ou en régie.</li>
+            <li>Confidentialité & NDA sur demande.</li>
+            <li>Hébergement EU compatible RGPD.</li>
+          </ul>
         </div>
+      </div>
     </section>
+  </main>
 
-    <section id="contact-preview">
-        <div class="container">
-            <h2>Prêt à démarrer votre projet ?</h2>
-            <p>Contactez-nous dès aujourd'hui pour discuter de vos besoins en matière de solutions logicielles.</p>
-            <a href="contact.html" class="btn">Contactez-nous</a>
-        </div>
-    </section>
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <p>© <span id="y"></span> Exe‑lium Corp. Tous droits réservés.</p>
+      <nav aria-label="Footer">
+        <a class="navlink" href="#top">Haut de page ↑</a>
+      </nav>
+    </div>
+  </footer>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Exe-lium Corp. Tous droits réservés.</p>
-        </div>
-    </footer>
+  <script>
+    // Accessibilité: scroll doux et focus
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          e.preventDefault();
+          const el = document.querySelector(id);
+          if (el) { el.scrollIntoView({ behavior:'smooth', block:'start' }); el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); }
+        }
+      });
+    });
+
+    // Form: simulation d'envoi
+    async function submitLead(e){
+      e.preventDefault();
+      const status = document.getElementById('form-status');
+      status.textContent = 'Envoi…';
+      const data = Object.fromEntries(new FormData(e.target));
+      try {
+        // Ici vous brancherez votre vrai endpoint (ex: /api/leads)
+        await new Promise(r => setTimeout(r, 900));
+        console.log('Lead', data);
+        e.target.reset();
+        status.textContent = 'Merci ! Votre demande a été envoyée.';
+      } catch(err){
+        status.textContent = 'Oups, une erreur s\'est produite. Réessayez.';
+      }
+      return false;
+    }
+
+    // Année courante
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
